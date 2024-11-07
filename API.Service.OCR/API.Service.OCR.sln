@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{42FB48BE-2559-4483-BBFE-C74FDBF1F626}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Presentation", "1-Presentation", "{89050074-A076-4785-A43F-174A46366AAB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Domain", "2-Domain", "{ED81B70B-AA21-49AD-B111-0D4B75F44EAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Infra", "3-Infra", "{83CBC94A-5165-4EA9-9BC9-0A1C7D4F90BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Service.OCR.Service", "src\API.Service.OCR.Service\API.Service.OCR.Service.csproj", "{1296EAD6-86FA-4FEA-B343-F8FD98F74C47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Service.OCR.Domain", "src\API.Service.OCR.Domain\API.Service.OCR.Domain.csproj", "{04ADA382-3CAD-42F9-A43B-7552DD50F1C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Service.OCR.Models", "src\API.Service.OCR.Models\API.Service.OCR.Models.csproj", "{055663BB-6FBC-4A9A-A37C-5DAB3791383A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9C05BDEC-3FFD-46BE-8AA0-F2EBCF4C054B}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1296EAD6-86FA-4FEA-B343-F8FD98F74C47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1296EAD6-86FA-4FEA-B343-F8FD98F74C47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1296EAD6-86FA-4FEA-B343-F8FD98F74C47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1296EAD6-86FA-4FEA-B343-F8FD98F74C47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04ADA382-3CAD-42F9-A43B-7552DD50F1C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04ADA382-3CAD-42F9-A43B-7552DD50F1C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04ADA382-3CAD-42F9-A43B-7552DD50F1C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04ADA382-3CAD-42F9-A43B-7552DD50F1C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{055663BB-6FBC-4A9A-A37C-5DAB3791383A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{055663BB-6FBC-4A9A-A37C-5DAB3791383A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{055663BB-6FBC-4A9A-A37C-5DAB3791383A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{055663BB-6FBC-4A9A-A37C-5DAB3791383A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{89050074-A076-4785-A43F-174A46366AAB} = {42FB48BE-2559-4483-BBFE-C74FDBF1F626}
+		{ED81B70B-AA21-49AD-B111-0D4B75F44EAC} = {42FB48BE-2559-4483-BBFE-C74FDBF1F626}
+		{83CBC94A-5165-4EA9-9BC9-0A1C7D4F90BC} = {42FB48BE-2559-4483-BBFE-C74FDBF1F626}
+		{1296EAD6-86FA-4FEA-B343-F8FD98F74C47} = {89050074-A076-4785-A43F-174A46366AAB}
+		{04ADA382-3CAD-42F9-A43B-7552DD50F1C5} = {ED81B70B-AA21-49AD-B111-0D4B75F44EAC}
+		{055663BB-6FBC-4A9A-A37C-5DAB3791383A} = {83CBC94A-5165-4EA9-9BC9-0A1C7D4F90BC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D9B68AB-EE0D-4981-8AC3-E53E9155C19E}
+	EndGlobalSection
+EndGlobal
