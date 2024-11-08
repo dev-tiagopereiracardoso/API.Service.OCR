@@ -6,5 +6,7 @@ namespace API.Service.OCR.Domain.Implementation.Interfaces
     public interface IProcessOcrService
     {
         Task<OcrOutput> PostFileAsync(FileUploadInput uploadfile);
+
+        Task<OcrOutput> PostFileChatGptAsync(FileUploadChatGptInput uploadfile);
     }
 }

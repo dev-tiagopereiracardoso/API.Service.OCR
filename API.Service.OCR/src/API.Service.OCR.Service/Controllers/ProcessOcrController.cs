@@ -19,13 +19,13 @@ namespace API.Service.OCR.Service.Controllers
             _processOcrService = processOcrService;
         }
 
-        [HttpPost("")]
+        [HttpPost("tesseract")]
         [SwaggerOperation(Summary = "")]
         [SwaggerResponse(StatusCodes.Status200OK)]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [SwaggerResponse(StatusCodes.Status401Unauthorized)]
         [SwaggerResponse(StatusCodes.Status417ExpectationFailed)]
-        public async Task<IActionResult> ProcessFile(FileUploadInput uploadfile)
+        public async Task<IActionResult> ProcessFileTesseract(FileUploadInput uploadfile)
         {
             var Data = _processOcrService.PostFileAsync(uploadfile).Result;
 
@@ -36,6 +36,31 @@ namespace API.Service.OCR.Service.Controllers
                 });
 
             if(Data.Error)
+                return BadRequest(new
+                {
+                    Message = Data.Message
+                });
+
+            return BadRequest();
+        }
+
+        [HttpPost("chatgpt")]
+        [SwaggerOperation(Summary = "")]
+        [SwaggerResponse(StatusCodes.Status200OK)]
+        [SwaggerResponse(StatusCodes.Status400BadRequest)]
+        [SwaggerResponse(StatusCodes.Status401Unauthorized)]
+        [SwaggerResponse(StatusCodes.Status417ExpectationFailed)]
+        public async Task<IActionResult> ProcessFileChatGpt(FileUploadChatGptInput uploadfile)
+        {
+            var Data = _processOcrService.PostFileChatGptAsync(uploadfile).Result;
+
+            if (Data.Success)
+                return Ok(new
+                {
+                    Text = Data.Text
+                });
+
+            if (Data.Error)
                 return BadRequest(new
                 {
                     Message = Data.Message
