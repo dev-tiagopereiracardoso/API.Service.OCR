@@ -179,16 +179,15 @@ namespace API.Service.OCR.Domain.Implementation.Services
                 {
                     var json = new
                     {
-                        UrlImage = urlFilesTemp + "/image" + i + "_out" + ((file.Extension == ".pdf") ? ".png" : file.Extension),
-                        Question = "Extract this receipt information into JSON array with following fields. The numeric values should not have a thousand separator. Just give me the plain JSON string without any markdown tag. Return me the properties in English without underscore"
+                        urlImage = urlFilesTemp + uidFolder + "/image" + i + "_out" + ((file.Extension == ".pdf") ? ".png" : file.Extension),
+                        question = "Extract this receipt information into JSON array with following fields. The numeric values should not have a thousand separator. Just give me the plain JSON string without any markdown tag. Return me the properties in English without underscore. " + uploadfile.Text
                     };
 
                     var objString = JsonConvert.SerializeObject(json);
-                    var request = new HttpRequestMessage(HttpMethod.Post, urlApiChatGpt);
-                    request.Content = new StringContent(objString, Encoding.UTF8);
-                    request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                    var response = await new HttpClient().SendAsync(request);
-                    response.EnsureSuccessStatusCode();
+                    var data = new StringContent(objString, Encoding.UTF8, "application/json");
+
+                    using var client = new HttpClient();
+                    var response = await client.PostAsync(urlApiChatGpt, data);
 
                     var result = await response.Content.ReadAsStringAsync();
 
